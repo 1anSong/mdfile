@@ -93,7 +93,26 @@ a.out: 2.c:5: main: Assertion `x < 0' failed.
 ## 优先级
 1. *c.type == *(c.type)
 2. *c->type == *(c->type)
+3. *p++ == *(p++) 
+4. *++p == *(++p) 
 
+```
+#include <stdio.h>
+int main(int argc, char *argv[]) {
+  static char *var = "xcsong";
+  static char *var1 = "xcsong";
+  char *p = var;
+  char *p1 = var1;
+
+  char ch = *p++;
+  char ch1 = *++p1;
+
+  printf("%c\n", ch); /* x */
+  printf("%c\n", ch1); /* c */
+
+  return 0;
+}
+```
 ## 如何声明&定义一个结构
 有三种方式
 ### 第一种方式
@@ -149,5 +168,18 @@ int main(void)
 ## gdb调试
 ### 启动调试
 对于C程序来说，需要再编译时加上-g参数，保留调试信息，否则不能使用GDB进行调试。
+
+## const 限定符
+以const关键字声明的对象，其值不能通过*赋值 递增 递减 * 来修改
+```
+const int nochange; /* 限定 nochange的值不能被修改 */
+nochange 12; /* 不允许 */
+
+const int nochange = 12; /* 允许，可以初始化const变量 */
+
+const char *var = "hello";
+char *p = var; /*不允许*/
+
+```
 
 
