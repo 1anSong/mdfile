@@ -179,7 +179,19 @@ const int nochange = 12; /* 允许，可以初始化const变量 */
 
 const char *var = "hello";
 char *p = var; /*不允许*/
+```
 
+## sizeof
+```
+#include <stdio.h>
+
+int main(int argc, char *argv[]) {
+  char *ch = "helloworld";
+  printf("%zd\n", sizeof(ch));           // 8
+  printf("%zd\n", sizeof("hellowolld")); // 11
+  return 0;
+}
+ /* 注意输出的不同*/ 
 ```
 
 
