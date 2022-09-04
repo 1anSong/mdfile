@@ -35,7 +35,17 @@ int main(void) {
   return 0;
 }
 ```
-####  
+#### 获得数组元素个数
+```c
+#include <stdio.h>
+int main(void)
+{
+	const int days={31,32,33,34};
+	printf("%ld",sizeof days/ sizeof days[0])
+	return 0
+}
+```
+
 
 
 
