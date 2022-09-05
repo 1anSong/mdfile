@@ -1,4 +1,6 @@
-set a {0 1 4}
-set b {2 3 5}
-
+set a 3
+while { $a > 0} {
+	puts $a
+	incr a -1
+}
 
