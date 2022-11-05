@@ -33,13 +33,16 @@ print                          .
 reset_timestep  0
 log             nvt.eng
 dump            1 all custom 1000 nvt1.lammpstrj id type xu yu zu vx vy vz
+thermo					10
+thermo_style		multi
 fix             4 all nvt temp ${temperature} ${temperature} 100.0
 run             10000
 unfix           4
 undump          1
 write_restart   nvt.rst
 ```
-此代码的第一个thermo为`thermo 100` 第一个为`thermo 10`,会在第一个thermo至第二个100步输出一次,从第二个thermo到遇见下一个thermo或者结束 10步输出一次
+此代码的第一个thermo为`thermo 100` 第二个为`thermo 10`,会在第一个thermo至第二个thermo之间100步输出一次,从第二个thermo到遇见下一个thermo或者结束 10步输出一次
+
 # restart
 ```
 print                          .
