@@ -27,7 +27,7 @@ lpq
 HP_LaserJet_M1005 is ready
  no entries
 
-3. 开始打印
+step3: 开始打印
 
 ```
 lpr <filename>
