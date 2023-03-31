@@ -1,5 +1,4 @@
-# 打印机使用手册
-使用课题组
+# 打印机
 ## 先决条件
 - 确保自己的电脑连接**ct-408**网络
 > wifi name: ct-408
@@ -33,6 +32,11 @@ HP_LaserJet_M1005 is ready
 ```
 lpr <filename>
 ```
+若想打印num遍
+```
+lpr <filename> -n <num>
+```
+
 **Warning**:无法打印office文件（word，excel,ppt),但可以先将他们转成pdf，再打印。
 
 ## 问题&解决办法
